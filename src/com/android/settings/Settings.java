@@ -663,4 +663,7 @@ public class Settings extends SettingsActivity {
     public static class ExtensionsLockScreenActivity extends SettingsActivity {}
     public static class ExtensionsAboutActivity extends SettingsActivity {}
     public static class ExtensionsMiscActivity extends SettingsActivity {}
+
+    // LiveDisplay
+    public static class LiveDisplaySettingsActivity extends SettingsActivity { /* empty */ }
 }
