@@ -21,6 +21,15 @@
     android:key="top_level_settings">
 
     <com.android.settings.widget.HomepagePreference
+        android:fragment="org.luminedroid.extensions.Extensions"
+        android:icon="@drawable/ic_extensions"
+        android:key="top_level_extensions"
+        android:order="-155"
+        android:title="@string/extensions_title"
+        android:summary="@string/extensions_summary"
+        settings:highlightableMenuKey="@string/menu_key_extensions"/>
+
+    <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.network.NetworkDashboardFragment"
         android:icon="@drawable/ic_settings_wireless"
         android:key="top_level_network"

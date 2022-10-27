@@ -21,9 +21,24 @@
     android:key="top_level_settings">
 
     <PreferenceCategory
-        android:order="-140"
+        android:order="-150"
         android:key="top_level_account_category"
         android:layout="@layout/settingslib_preference_category_no_title">
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:order="-140"
+        android:key="top_level_extensions_category"
+        android:layout="@layout/settingslib_preference_category_no_title">
+
+        <com.android.settings.widget.HomepagePreference
+            android:fragment="org.luminedroid.extensions.Extensions"
+            android:icon="@drawable/ic_homepage_extensions"
+            android:key="top_level_extensions"
+            android:order="-20"
+            android:title="@string/extensions_title"
+            android:summary="@string/extensions_summary"
+            settings:highlightableMenuKey="@string/menu_key_extensions"/>
     </PreferenceCategory>
 
     <PreferenceCategory
