@@ -53,6 +53,8 @@ import com.android.settingslib.drawer.CategoryKey;
 
 import java.util.Map;
 
+import org.luminedroid.extensions.Extensions;
+
 /**
  * A registry to keep track of which page hosts which category.
  */
@@ -135,6 +137,8 @@ public class DashboardFragmentRegistry {
                 CategoryKey.CATEGORY_MORE_SECURITY_PRIVACY_SETTINGS);
         PARENT_TO_CATEGORY_KEY_MAP.put(SupervisionDashboardFragment.class.getName(),
                 CategoryKey.CATEGORY_SUPERVISION);
+        PARENT_TO_CATEGORY_KEY_MAP.put(Extensions.class.getName(),
+                 Extensions.CATEGORY_KEY);
 
         CATEGORY_KEY_TO_PARENT_MAP = new ArrayMap<>(PARENT_TO_CATEGORY_KEY_MAP.size());
 
