@@ -61,6 +61,7 @@ android_library {
         "src/com/android/settings/biometrics/fingerprint2/lib/**/*.kt",
     ],
     use_resource_processor: true,
+    aaptflags: ["--extra-packages org.luminedroid.extensions"],
     resource_dirs: [
         "res",
         "res-export", // for external usage
