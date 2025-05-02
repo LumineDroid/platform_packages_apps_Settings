@@ -526,4 +526,7 @@ public class Settings extends SettingsActivity {
 
     // Extensions Additoon
     public static class ExtensionsActivity extends SettingsActivity {}
+
+    // LiveDisplay
+    public static class LiveDisplaySettingsActivity extends SettingsActivity { /* empty */ }
 }

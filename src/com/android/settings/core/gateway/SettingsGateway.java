@@ -212,6 +212,8 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2;
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
+import com.android.settings.livedisplay.LiveDisplaySettings;
+
 import org.luminedroid.extensions.Extensions;
 import org.luminedroid.extensions.category.*;
 
@@ -415,7 +417,8 @@ public class SettingsGateway {
             ZenModesListFragment.class.getName(),
             ZenModeFragment.class.getName(),
             ContactsStorageSettings.class.getName(),
-            Extensions.class.getName()
+            Extensions.class.getName(),
+            LiveDisplaySettings.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
