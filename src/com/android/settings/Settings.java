@@ -538,4 +538,13 @@ public class Settings extends SettingsActivity {
     public static class ContentProtectionSettingsActivity extends SettingsActivity { /* empty */ }
     public static class MagnificationActivity extends SettingsActivity { /* empty */ }
     public static class FlashNotificationsActivity extends SettingsActivity { /* empty */ }
+
+    /** Extensions */
+    public static class ExtensionsActivity extends SettingsActivity {}
+    public static class ExtensionsStatusbarActivity extends SettingsActivity {}
+    public static class ExtensionsQuickSettingsActivity extends SettingsActivity {}
+    public static class ExtensionsButtonActivity extends SettingsActivity {}
+    public static class ExtensionsLockScreenActivity extends SettingsActivity {}
+    public static class ExtensionsAboutActivity extends SettingsActivity {}
+    public static class ExtensionsMiscActivity extends SettingsActivity {}
 }
