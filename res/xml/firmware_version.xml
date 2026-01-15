@@ -21,6 +21,11 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
+    <!-- LumineDroid Header -->
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="luminedroid_header_card"
+        android:layout="@layout/luminedroid_header"/>
+
     <!-- Android version -->
     <Preference
         android:key="os_firmware_version"
@@ -29,14 +34,6 @@
         settings:enableCopying="true"
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
-
-    <!-- LumineDroid version -->
-    <Preference
-        android:key="lumine_version"
-        android:title="@string/lumine_version_title"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.LumineDroidVersionController"/>
 
     <!-- Security patch -->
     <Preference
