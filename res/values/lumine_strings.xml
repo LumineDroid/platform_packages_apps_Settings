@@ -127,4 +127,8 @@
     <!-- Heads-up -->
     <string name="heads_up_notifications_enabled_title">Heads-up</string>
     <string name="heads_up_notifications_enabled_summary">Display priority notifications in a small floating window</string>
+
+    <!-- Notifications/Less boring heads up -->
+    <string name="notifications_less_boring_heads_up_title">Less boring</string>
+    <string name="notifications_less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
 </resources>
