@@ -43,8 +43,14 @@ public class BasebandVersionPreferenceController extends BasePreferenceControlle
 
     @Override
     public CharSequence getSummary() {
-        return SystemProperties.get(BASEBAND_PROPERTY,
-                mContext.getString(R.string.device_info_default));
+        String raw = SystemProperties.get(BASEBAND_PROPERTY,
+            mContext.getString(R.string.device_info_default));
+        String[] parts = raw.split(",");
+        java.util.LinkedHashSet<String> unique = new java.util.LinkedHashSet<>();
+        for (String part : parts) {
+            unique.add(part.trim());
+        }
+        return String.join(", ", unique);
     }
 }
 // LINT.ThenChange(BasebandVersionPreference.kt)
