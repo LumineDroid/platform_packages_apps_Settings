@@ -35,8 +35,6 @@ import android.util.Size;
 import android.util.TypedValue;
 import android.view.Surface;
 import android.view.TextureView;
-import android.view.View;
-import android.widget.ImageView;
 
 import com.android.settings.R;
 import com.android.settings.biometrics.BiometricEnrollSidecar;
@@ -70,10 +68,7 @@ public class FaceEnrollPreviewFragment extends InstrumentedPreferenceFragment
     private Runnable mSurfaceReadyListener;
 
     // View used to contain the circular cutout and enrollment animation drawable
-    private ImageView mCircleView;
-
-    // Drawable containing the circular cutout and enrollment animations
-    private FaceEnrollAnimationDrawable mAnimationDrawable;
+    private FaceEnrollProgressView mProgressView;
 
     // Texture used for showing the camera preview
     private FaceSquareTextureView mTextureView;
@@ -196,13 +191,7 @@ public class FaceEnrollPreviewFragment extends InstrumentedPreferenceFragment
         super.onCreate(savedInstanceState);
         mHalOwnsCamera = getResources().getBoolean(R.bool.config_face_enroll_hal_owns_camera);
         mTextureView = getActivity().findViewById(R.id.texture_view);
-        mCircleView = getActivity().findViewById(R.id.circle_view);
-
-        // Must disable hardware acceleration for this view, otherwise transparency breaks
-        mCircleView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-
-        mAnimationDrawable = new FaceEnrollAnimationDrawable(getContext(), mAnimationListener);
-        mCircleView.setImageDrawable(mAnimationDrawable);
+        mProgressView = getActivity().findViewById(R.id.progress_view);
 
         mCameraManager = (CameraManager) getContext().getSystemService(Context.CAMERA_SERVICE);
     }
@@ -230,17 +219,18 @@ public class FaceEnrollPreviewFragment extends InstrumentedPreferenceFragment
 
     @Override
     public void onEnrollmentError(int errMsgId, CharSequence errString) {
-        mAnimationDrawable.onEnrollmentError(errMsgId, errString);
+        mProgressView.setErrorState();
     }
 
     @Override
     public void onEnrollmentHelp(int helpMsgId, CharSequence helpString) {
-        mAnimationDrawable.onEnrollmentHelp(helpMsgId, helpString);
+        mProgressView.setHelpState();
     }
 
     @Override
     public void onEnrollmentProgressChange(int steps, int remaining) {
-        mAnimationDrawable.onEnrollmentProgressChange(steps, remaining);
+        mProgressView.setProgress(steps, remaining);
+        if (remaining == 0) mProgressView.setCompleteState();
     }
 
     public void setListener(ParticleCollection.Listener listener) {
